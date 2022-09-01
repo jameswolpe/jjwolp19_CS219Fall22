@@ -1,3 +1,5 @@
+package class_notes;
+
 public class Investment {
     public static double investment(double c, double r, int t, int n) {
         return c * Math.pow(1 + r/n, t*n);

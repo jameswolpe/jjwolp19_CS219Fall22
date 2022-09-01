@@ -1,3 +1,5 @@
+package class_notes;
+
 // by convention, class names are capitalized.
 public class HelloWorld {
     /*
