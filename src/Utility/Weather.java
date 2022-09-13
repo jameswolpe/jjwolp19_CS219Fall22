@@ -14,6 +14,14 @@ public class Weather {
 
         System.out.print("Enter temperature in degrees F: ");
         double temperature = kbd.nextDouble();
+        if (kbd.hasNextDouble()){
+
+        }
+        else {
+            System.out.printf("Error: please enter a decimal number. You entered %s",
+                    kbd.next());
+            return; // exit main
+        }
 
         System.out.print("Enter wind velocity in MPH: ");
         double velocity = kbd.nextDouble();

@@ -1,4 +1,4 @@
-package class_notes;
+package Utility;
 
 public class Investment {
     public static double investment(double c, double r, int t, int n) {
