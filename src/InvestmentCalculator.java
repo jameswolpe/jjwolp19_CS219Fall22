@@ -1,4 +1,5 @@
-import Utility.Investment;
+/*
+import HW3.Investment;
 import java.util.Scanner;
 
 public class InvestmentCalculator {
@@ -28,3 +29,4 @@ public class InvestmentCalculator {
 
     }
 }
+*/
