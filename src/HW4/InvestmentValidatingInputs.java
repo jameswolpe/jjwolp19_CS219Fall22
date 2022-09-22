@@ -18,13 +18,13 @@ public class InvestmentValidatingInputs {
             if (kbd.hasNextInt()) {
                 c = kbd.nextInt();
                 if (c < 0) {
-                    System.out.printf("Error: initial deposit should be greater than zero. You entered %d",
+                    System.out.printf("Error: initial deposit should be greater than zero. You entered %d \n",
                             c);
                 } else {
                     x = true;
                 }
             } else {
-                System.out.printf("Error: integer expected. You entered \"%s\"",
+                System.out.printf("Error: integer expected. You entered \"%s\" \n",
                         kbd.next());
             }
         }
@@ -43,7 +43,7 @@ public class InvestmentValidatingInputs {
             r = kbd.nextDouble();
             if (r < 0 || r >= 1) {
                 System.out.println("Error: interest rate should be expressed as a decimal between 0 and 1");
-                System.out.printf("For example 8 percent should be entered as .08. You entered %s",
+                System.out.printf("For example 8 percent should be entered as .08. You entered %s \n",
                         r);
             } else{
                 x = true;
@@ -52,7 +52,7 @@ public class InvestmentValidatingInputs {
         else
 
         {
-            System.out.printf("Error: enter a decimal number. You entered \"%s\"",
+            System.out.printf("Error: enter a decimal number. You entered \"%s\" \n",
                     kbd.next());
         }
     }
@@ -68,13 +68,13 @@ public class InvestmentValidatingInputs {
             if (kbd.hasNextInt()) {
                 t = kbd.nextInt();
                 if (t < 0) {
-                    System.out.printf("Error: number of years should be greater than zero. You entered %d",
+                    System.out.printf("Error: number of years should be greater than zero. You entered %d \n",
                             t);
                 }else{
                     x = true;
                 }
             } else {
-                System.out.printf("Error: enter an integer. You entered \"%s\"",
+                System.out.printf("Error: enter an integer. You entered \"%s\" \n",
                         kbd.next());
             }
         }
@@ -89,7 +89,7 @@ public class InvestmentValidatingInputs {
             if (kbd.hasNextInt()) {
                 n = kbd.nextInt();
                 if (n < 0) {
-                    System.out.printf("Error: number of times interest is compounded should be greater than zero. You entered \"%d\"",
+                    System.out.printf("Error: number of times interest is compounded should be greater than zero. You entered \"%d\" \n",
                             n);
                 }
                 else{
@@ -97,7 +97,7 @@ public class InvestmentValidatingInputs {
                 }
             }
             else {
-                System.out.printf("Error: enter an integer. You entered \"%s\"",
+                System.out.printf("Error: enter an integer. You entered \"%s\" \n",
                         kbd.next());
             }
 
