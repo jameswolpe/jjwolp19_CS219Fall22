@@ -51,11 +51,9 @@ public class SwallowStats {
         }
         double mean = sum/count;
 
-        System.out.printf(sum);
-        System.out.println(count);
-        System.out.println(mean);
-        System.out.println(max);
-        System.out.println(min);
+        System.out.printf("The mean swallow speed is %.2f meters per second. \n", mean);
+        System.out.printf("The maximum swallow speed is %.2f meters per second. \n", max);
+        System.out.printf("The minimum swallow speed is %.2f meters per second. \n", min);
     } //avg_swallow_speed
 
     public static void main(String [] args) {
