@@ -7,6 +7,13 @@ public class HelloWorld {
 
     public static void main(String [] args) {
         System.out.println("Hello World");
+        String s = "hippopotomonstrosesquippedaliophobia";
+        System.out.println(s.charAt(0));
+        System.out.println(s.indexOf('q'));
+        System.out.println(s.indexOf('o'));
+        System.out.println(s.substring(s.indexOf('m'),16));
+
+
         int x = 5;
         boolean z = true;
         double pi = 3.14159;

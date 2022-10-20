@@ -42,7 +42,7 @@ public class Investment {
             r = kbd.nextDouble();
             if (r < 0 || r > 1) {
                 System.out.println("Error: interest rate should be expressed as a decimal between 0 and 1");
-                System.out.printf("For example 8 percent should be entered as .08. You entered \"%s\"",
+                System.out.printf("For example 8 percent should be entered as .08. You entered %s",
                         r);
                 return; //
             }
