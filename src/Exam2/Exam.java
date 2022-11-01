@@ -57,13 +57,13 @@ public class Exam {
 
 
 
-        return rev(palindromes);
+        return palindromes;
 
     }
     public static void main(String[] args) {
         String[] palindromes = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt", 2309);
 
-        System.out.println(Arrays.toString(palindromes));
+        System.out.println(Arrays.toString(rev(palindromes)));
     }
 
 

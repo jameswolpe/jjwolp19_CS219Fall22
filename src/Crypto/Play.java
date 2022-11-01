@@ -17,6 +17,7 @@ public class Play {
         System.out.println(-93 % 13);               // -2
         System.out.println(Math.floorMod(-15,12));  // 9
         System.out.println(Math.floorMod(-93,13));  // 11
+        System.out.println(6%2);
     }
 }
 

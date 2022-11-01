@@ -1,5 +1,7 @@
 package RecursionExamples;
 
+import java.util.Arrays;
+
 public class Recursion {
 
     // sum of the digits
@@ -83,7 +85,10 @@ public class Recursion {
 
     // sum(new int []{1,2,3,4}) == 10
     public static int sum(int[] a, int i) {
-        return -1;  // shut up error message
+        if (i > a.length - 1)
+            return 0;
+        else
+            return sum(a, i + 1) + a[i];
     }
 
 
@@ -95,7 +100,16 @@ public class Recursion {
 
     // Arrays.equals(new int [] {1,2,3,4},
     //               new int [] {4,3,2,1})
-    public static void reverse(int [] a, int i, int j) {
+    // i and j are the left and right bounds of the array
+    public static int[] reverse(int [] a, int i, int j) {
+        if (i<j) {
+            swap(a, i, j);
+            reverse(a, i +1, j-1);
+        }
+
+        return a;
+
+
 
     }
 
@@ -108,7 +122,10 @@ public class Recursion {
         System.out.println(removeSpaces("  h   e ll    o  ").equals("hello"));
         System.out.println(isPalindrome("gog"));
         System.out.println(isPalindrome2("yahoohay"));
+        System.out.println(sum(new int []{1,2,3,4}, 0) == 10);
 
+        int[] nums = {1,2,3,4};
+        System.out.println(Arrays.equals(new int[]{4,3,2,1}, reverse(nums, 0, nums.length -1)));
 
     }
 
