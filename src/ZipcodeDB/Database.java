@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Database {
@@ -16,6 +17,7 @@ public class Database {
         this.codes = new ArrayList<>();
         this.load_zips();
     }
+
     // fill the zipcode array list with real data
     private void load_zips() {
         // connect to the web page of speeds
@@ -34,7 +36,7 @@ public class Database {
         // read zipcode file line by line
         while (s.hasNextLine()) {
             String line = s.nextLine();
-            String [] parts = line.split(",");
+            String[] parts = line.split(",");
 
             Zipcode z = new Zipcode(
                     parts[1].substring(1, parts[1].length() - 1),
@@ -43,11 +45,44 @@ public class Database {
                     Double.parseDouble(parts[4]),
                     Double.parseDouble(parts[5]),
                     Integer.parseInt(parts[6])
-                    );
-            //continue on Thusday
+            );
+            codes.add(z); // put z at the end if the array list
 
+        }
+        // sort by the zipcode
+        Collections.sort((this.codes));
+
+    } // load_zips
+
+    // write a function to search for zipcode data by a zipcode.
+    public Zipcode findByZip(String code) {
+        for (int i = 0; i < this.codes.size(); i++) {
+            if (code.equals(this.codes.get(i).getCode()))
+                return this.codes.get(i);
 
         }
 
+
+        return null;
     }
+    private Zipcode bsearch(ArrayList<Zipcode> alz, String target, int low, int high) {
+        if (low > high)
+            return null;
+
+        int mid = (low + high) / 2;
+
+        if (this.codes.get(mid).getCode().equals(target))
+            return this.codes.get(mid);
+        else if (this.codes.get(mid).getCode().compareTo(target) < 0)
+            return bsearch(alz, target, mid+1, high);
+        else
+            return bsearch(alz, target, low, mid-1);
+
+    }
+    // provides a simpler interface to the bsearch function
+    public Zipcode search(String code){
+        return bsearch(code, code, 0, codes.size()-1);
+    }
+
+
 }
