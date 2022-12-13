@@ -103,13 +103,17 @@ public class Database {
         else
             return null;
     }
-    /*
-    Return the zipcode info of the northern most latitude
 
-    On practicle, understand the zipcode da
-     */
-    public Zipcode max_latitude() {
-        return null;
+    // return northernmost zipcode
+ public Zipcode getNorthern() {
+        Zipcode northernmost = null;
+        //enhanced for
+        for (Zipcode code : this.codes) {
+            if (this.codes.get(0).getLat() < code.getLat()) {
+                northernmost = code;
+            }
+        }
+        return northernmost;
     }
 
 }

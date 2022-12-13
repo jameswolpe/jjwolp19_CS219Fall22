@@ -40,6 +40,7 @@ public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
     public String getCode() {
         return code;
     }
+    public double getLat() { return lat; }
 
     // The natural ordering for zipcode
     @Override
@@ -71,7 +72,7 @@ public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
         }
 
         double humidity = 0, temp = 0, speed = 0;
-        String clouds = "";
+        String clouds = null;
 
         while (s.hasNextLine()) {
             String line = s.nextLine();

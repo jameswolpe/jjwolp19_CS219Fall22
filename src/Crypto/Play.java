@@ -11,6 +11,7 @@ public class Play {
         System.out.println(Math.floor(-5/2));    // -2.0
         System.out.println(Math.floor(-5/2.0));  // -3.0
         System.out.println(Math.floorDiv(-3,2)); // -2
+        System.out.println("lalal");
 
         // remainder play
         System.out.println(-15 % 12);               // -3
@@ -18,6 +19,7 @@ public class Play {
         System.out.println(Math.floorMod(-15,12));  // 9
         System.out.println(Math.floorMod(-93,13));  // 11
         System.out.println(6%2);
+        System.out.println(Math.floorMod(-16,26));
     }
 }
 

@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 public class GUIPanel extends JPanel {
     private JTextField zipcode;
     private  JButton submit;
+    private JButton northernmost;
     private JTextArea output;
 
     private Database db; // The zipcode database
@@ -22,6 +23,10 @@ public class GUIPanel extends JPanel {
         this.add(this.submit);
         this.submit.addActionListener(new SubmitButtonListener());
 
+
+        this.northernmost = new JButton("Northernmost");
+        this.add(this.northernmost);
+        this.northernmost.addActionListener(new NorthernmostButtonListener());
 
         this.output = new JTextArea(5,20);
         this.add(this.output);
@@ -44,5 +49,16 @@ public class GUIPanel extends JPanel {
             System.out.println(wob);
         }
     }
+    class NorthernmostButtonListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // function will be called when the user presses MaxLatitudeButton
+
+            Zipcode zc = db.getNorthern();
+            WeatherObservation wob = zc.getWeatherData();
+
+            output.setText(wob.toString());
+        }
+    }
 }
-// sample question add a max latitude button that when pressed
